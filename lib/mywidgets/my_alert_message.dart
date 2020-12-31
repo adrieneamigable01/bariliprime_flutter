@@ -23,7 +23,7 @@ class PopupDialog  {
       desc: description,
     ).show();
   }
-  onBasicAlertWithConetnt({@required context,@required title,@required description,@required content,@required buttons}) {
+  onBasicAlertWithConetnt({@required context,@required title,@required content,@required buttons}) {
     Alert(
       context: context,
       type: AlertType.warning,
@@ -178,35 +178,21 @@ class PopupDialog  {
   }
 
 // Alert custom content
-  onAlertWithCustomContentPressed({@required context,@required title,@required description}) {
+  onAlertWithCustomContentPressed({@required context,@required title,@required description,@required content}) {
     Alert(
         context: context,
-        title: "LOGIN",
-        content: Column(
-          children: <Widget>[
-            TextField(
-              decoration: InputDecoration(
-                icon: Icon(Icons.account_circle),
-                labelText: 'Username',
-              ),
-            ),
-            TextField(
-              obscureText: true,
-              decoration: InputDecoration(
-                icon: Icon(Icons.lock),
-                labelText: 'Password',
-              ),
-            ),
-          ],
-        ),
-        buttons: [
-          DialogButton(
-            onPressed: () => Navigator.pop(context),
-            child: Text(
-              "LOGIN",
-              style: TextStyle(color: Colors.white, fontSize: 20),
-            ),
-          )
-        ]).show();
+        title: title,
+        content: content,
+        buttons:[]
+        // buttons: [
+        //   DialogButton(
+        //     onPressed: () => Navigator.pop(context),
+        //     child: Text(
+        //       "LOGIN",
+        //       style: TextStyle(color: Colors.white, fontSize: 20),
+        //     ),
+        //   )
+        // ]
+    ).show();
   }
 }

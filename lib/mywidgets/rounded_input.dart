@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
 class RoundedInput extends StatelessWidget {
-  RoundedInput({@required this.hintText,@required this.functionChange,this.keyboardType,this.isObscureText,this.initialValue});
+  RoundedInput({@required this.hintText,@required this.functionChange,this.keyboardType,this.isObscureText,this.initialValue,this.validator});
   final hintText;
   final Function functionChange;
   final keyboardType;
   final bool isObscureText;
   final String initialValue;
+  final Function validator;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -23,6 +24,7 @@ class RoundedInput extends StatelessWidget {
       keyboardType: keyboardType,
       obscureText: isObscureText != null ? isObscureText : false,
       onChanged: functionChange,
+      validator: validator,
     );
   }
 }

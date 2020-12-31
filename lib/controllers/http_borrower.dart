@@ -12,4 +12,20 @@ class HttpBorrower {
      print(newUrl);
      return await http.get(url: newUrl);
   }
+
+  Future getBorrowerLoan({payload}) async {
+    String newUrl = "$kBorrowersLoan/$payload";
+    print(newUrl);
+    return await http.get(url: newUrl);
+  }
+
+  Future getBorrowerBalance({payload}) async {
+    return await http.post(url: kBorrowerBalance,payload: payload);
+  }
+
+  Future getTotalBorrower({payload}) async {
+    String newUrl = "$kBorrowerTotal/$payload";
+    return await http.get(url: newUrl);
+  }
+
 }

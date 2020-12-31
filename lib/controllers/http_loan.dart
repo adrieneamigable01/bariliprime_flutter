@@ -21,4 +21,8 @@ class HttpLoan {
   Future releaseLoan({@required payload}) async {
     return await http.post(url: kReleaseLoan,payload: payload);
   }
+  Future getTotalLoan({payload}) async {
+    String newUrl = "$kLoanTotal/$payload";
+    return await http.get(url: newUrl);
+  }
 }

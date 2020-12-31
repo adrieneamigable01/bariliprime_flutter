@@ -9,17 +9,7 @@ class TableColumn extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Container(
-            decoration: BoxDecoration(
-                border: Border(
-                  bottom: BorderSide(width: 2.0, color: Colors.grey),
-                )
-            ),
-            child: childRow
-        ),
-      ),
+      child: childRow
     );
   }
 }

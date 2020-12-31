@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:barili_prime/Pages/authentication.dart';
-import 'package:barili_prime/Pages/dashboard.dart';
-import 'package:barili_prime/Pages/borrowers.dart';
-import 'package:barili_prime/Pages/borrower.dart';
-import 'package:barili_prime/Pages/loan.dart';
-import 'dart:convert';
-void main() {
-  runApp(MyApp());
-}
+import 'package:barili_prime/views/authentication.dart';
+import 'package:barili_prime/views/dashboard.dart';
+import 'package:barili_prime/views/borrowers.dart';
+import 'package:barili_prime/views/borrower.dart';
+import 'package:barili_prime/views/loan.dart';
+import 'package:barili_prime/views/added-capital.dart';
+import 'package:barili_prime/views/cashier.dart';
+import 'package:barili_prime/controllers/hivedb_helper.dart';
 
+void main() async {
+
+  runApp(MyApp());
+  HiveDBHelper hiveDBHelper = HiveDBHelper();
+  await hiveDBHelper.initHelper();
+
+}
 
 class MyApp extends StatelessWidget {
 
@@ -23,6 +29,8 @@ class MyApp extends StatelessWidget {
         'borrowers': (context) => BorrowersPage(),
         'borrower': (context) => BorrowerPage(),
         'loan': (context) => LoanPage(),
+        'capital': (context) => CapitalPage(),
+        'cashier': (context) => CashierPage(),
       },
     );
   }
